@@ -94,7 +94,6 @@ export AWS_ACCESS_KEY_ID="<>"
 export AWS_SECRET_ACCESS_KEY="<>"
 export AWS_DEFAULT_REGION="us-east-1"
 ```
-=======
 
 ## Git Commands used to setup code in your local machine
 
@@ -107,7 +106,6 @@ git clone https://github.com/kalyani-bellamkonda/terraform-workshop.git
 Once the repository is cloned, run the following commands to switch to newly created directory and check out the branch that we will be starting with as first LAB.
 
 ```
-
 ls
 
 cd terraform-workshop/
@@ -163,7 +161,6 @@ terraform destroy
 terraform state list
 ```
 
->>>>>>> e0b515c (Updated LAB-01 files)
 ## More Information: AWS Services and components we use or create with Terraform
 
 - Amazon EC2 - Virtual Server: https://aws.amazon.com/ec2
