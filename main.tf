@@ -3,6 +3,7 @@
 # Build Ubuntu Instance as first EC2 instance
 # Build Amamzon Linux Instance as second EC2 instance
 # Feel free to change Tags specific attribute values here
+# Terraform Dcoumentation for this lab: https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance
 #----------------------------------------------------------
 
 provider "aws" {
