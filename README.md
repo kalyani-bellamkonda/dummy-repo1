@@ -37,37 +37,50 @@ git checkout LAB-01
 ls
 ```
 
+![Capto_Capture 2021-04-28_08-49-20_AM](https://user-images.githubusercontent.com/40120750/116437687-b178cf00-a81b-11eb-9886-e31156cc986a.gif)
+
 ## Terraform Commands used
 
 ### initialize
 
+```
 terraform init
+```
 ### preview terraform actions
 
+```
 terraform plan
+```
 ### apply configuration with variables
 
+```
 terraform apply -var-file terraform-dev.tfvars
 terraform apply -var-file terraform-test.tfvars
 terraform apply -var-file terraform-prod.tfvars
+```
 ### destroy a single resource
-
+```
 terraform destroy -target aws_vpc.<app-name>-dev-vpc  
+```
 ### destroy everything fromtf files
-
+```
 terraform destroy
+```
 ### show resources and components from current state
-
+```
 terraform state list
+```
 ### show current state of a specific resource/data
-
+```
 terraform state show aws_vpc.<app-name>-dev-vpc  
+```
 ### set avail_zone as custom tf environment variable - before apply
-
+```
 export TF_VAR_avail_zone="us-east-1a"
 export AWS_ACCESS_KEY_ID="<>"
 export AWS_SECRET_ACCESS_KEY="<>"
 export AWS_DEFAULT_REGION="us-east-1"
+```
 ## More Information: AWS Services and components we use or create with Terraform
 
 - Amazon EC2 - Virtual Server: https://aws.amazon.com/ec2
