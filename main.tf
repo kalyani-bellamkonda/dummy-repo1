@@ -38,15 +38,17 @@ resource "aws_instance" "ec2_instance_ubuntu" {
     Name    = "dev-UbuntuLinux-Server"
     Owner   = "Org/Dept Name"
     project = "Mars Helicopter"
+    Environment = "lab"
   }
 }
 
 # resource "aws_instance" "ec2_instance_amazon" {
-#   ami           = "ami-0528a5175983e7f28"       # You can get ami id from AWS Launch Instances in AWS cloud
+#   ami           = "ami-0742b4e673072066f"       # You can get ami id from AWS Launch Instances in AWS cloud
 #   instance_type = "t3.small"              
 #   tags = {
 #     Name  = "dev-AmazonLinux-Server"
 #     Owner = "Org/Dept Name"
 #     project = "Mars Helicopter"
+#     Environment = "development"
 #   }
 # }
