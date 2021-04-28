@@ -37,7 +37,7 @@ git checkout LAB-01
 ls
 ```
 
-## Commands used
+## Terraform Commands used
 
 ### initialize
 
