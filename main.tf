@@ -8,10 +8,30 @@
 
 provider "aws" {
   region = "us-east-1"
+  #---------You can provide access key and secret values here as well but nor recommended. 
+  #---------Instead  use EXPORT/environment variables from terminal. Refer to README file for the EXPORT variables you can use
+  #access_key = <>
+  #secret_key = <>
+}
+
+data "aws_ami" "ubuntu" {
+  most_recent = true
+
+  filter {
+    name   = "name"
+    values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
+  }
+
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
+
+  owners = ["099720109477"] # Canonical
 }
 
 resource "aws_instance" "ec2_instance_ubuntu" {
-  ami           = "ami-06e54d05255faf8f6" # You can get ami id from AWS Launch Instances in AWS cloud
+  ami           = data.aws_ami.ubuntu.id # You can get ami id from AWS Launch Instances in AWS cloud
   instance_type = "t3.micro"              
   
   tags = {
@@ -21,12 +41,12 @@ resource "aws_instance" "ec2_instance_ubuntu" {
   }
 }
 
-resource "aws_instance" "ec2_instance_amazon" {
-  ami           = "ami-0528a5175983e7f28"       # You can get ami id from AWS Launch Instances in AWS cloud
-  instance_type = "t3.small"              
-  tags = {
-    Name  = "dev-AmazonLinux-Server"
-    Owner = "Org/Dept Name"
-    project = "Mars Helicopter"
-  }
-}
+# resource "aws_instance" "ec2_instance_amazon" {
+#   ami           = "ami-0528a5175983e7f28"       # You can get ami id from AWS Launch Instances in AWS cloud
+#   instance_type = "t3.small"              
+#   tags = {
+#     Name  = "dev-AmazonLinux-Server"
+#     Owner = "Org/Dept Name"
+#     project = "Mars Helicopter"
+#   }
+# }
