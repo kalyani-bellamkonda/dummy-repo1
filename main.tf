@@ -14,7 +14,7 @@ provider "aws" {
   #secret_key = <>
 }
 
-data "aws_ami" "ubuntu" {
+data "aws_ami" "ubuntu-ami" {
   most_recent = true
 
   filter {
@@ -31,7 +31,7 @@ data "aws_ami" "ubuntu" {
 }
 
 resource "aws_instance" "ec2_instance_ubuntu" {
-  ami           = data.aws_ami.ubuntu.id # You can get ami id from AWS Launch Instances in AWS cloud
+  ami           = data.aws_ami.ubuntu-ami.id    # You can get ami id from AWS Launch Instances in AWS cloud
   instance_type = "t3.micro"              
   
   tags = {
