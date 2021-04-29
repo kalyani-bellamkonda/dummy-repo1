@@ -1,31 +1,32 @@
 This repository helps with simple lab excercises to learn terraform step by step.
 
-Cloud Provider considered for this excercise is "AWS Provider"
+Cloud Provider considered for this excercise is **"AWS Provider"**
 
 ## Pre-Requisites for you to follow along
 
-- Code Editor, where we write TF Configuration Code, is Visual Studio Code: https://code.visualstudio.com/download
+**Code Editor, where we write TF Configuration Code, is Visual Studio Code**
+
+* https://code.visualstudio.com/download
+
 - An AWS Account, because we are automating AWS infrastructure with Terraform
 
-Cloud Provider considered for this excercise is "**AWS Provider**"
+**Cloud Provider considered for this excercise is "**AWS Provider**"**
 
-## Pre-Requisites for you to follow along
-
- Code Editor, where we write Terraform Configuration Code, is **Visual Studio Code**.
-
- * Download VS Code from: https://code.visualstudio.com/download
-
- An AWS Account, because we are automating AWS infrastructure with Terraform
-
- * Create free AWS account from here: https://aws.amazon.com/
+* Create free AWS account from here: https://aws.amazon.com/
 
 ## Useful Links
 
-- Code Editor, e.g. Visual Studio Code: https://code.visualstudio.com/download
-- Installation Guide for Terraform: https://learn.hashicorp.com/tutorials/terraform/install-cli
-- Guide of how to create an AWS Account: https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/
-- AWS 1-Year Free Tier information: https://aws.amazon.com/free
-- Installation Guides for AWS CLI: https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html
+**Code Editor, e.g. Visual Studio Code:** https://code.visualstudio.com/download
+
+**Installation Guide for Terraform:** https://learn.hashicorp.com/tutorials/terraform/install-cli
+
+**Guide of how to create an AWS Account:**
+
+https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/
+
+**AWS 1-Year Free Tier information:** https://aws.amazon.com/free
+
+**Installation Guides for AWS CLI:** https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html
 
 ## Git Commands used to setup code in your local machine
 
@@ -45,7 +46,7 @@ cd terraform-workshop/
 
 git branch -a
 
-git checkout LAB-01
+git checkout main
 
 ls
 ```
@@ -59,11 +60,13 @@ ls
 ```
 terraform init
 ```
+
 ### preview terraform actions
 
 ```
 terraform plan
 ```
+
 ### apply configuration with variables
 
 ```
@@ -71,23 +74,33 @@ terraform apply -var-file terraform-dev.tfvars
 terraform apply -var-file terraform-test.tfvars
 terraform apply -var-file terraform-prod.tfvars
 ```
+
 ### destroy a single resource
+
 ```
 terraform destroy -target aws_vpc.<app-name>-dev-vpc  
 ```
+
 ### destroy everything fromtf files
+
 ```
 terraform destroy
 ```
+
 ### show resources and components from current state
+
 ```
 terraform state list
 ```
+
 ### show current state of a specific resource/data
+
 ```
 terraform state show aws_vpc.<app-name>-dev-vpc  
 ```
+
 ### set avail_zone as custom tf environment variable - before apply
+
 ```
 export TF_VAR_avail_zone="us-east-1a"
 export AWS_ACCESS_KEY_ID="<>"

@@ -8,8 +8,8 @@
 
 provider "aws" {
   region = "us-east-1"
-  #---------You can provide access key and secret values here as well but nor recommended. 
-  #---------Instead  use EXPORT/environment variables from terminal. Refer to README file for the EXPORT variables you can use
+  #You can provide access key and secret values here as well but nor recommended. 
+  #Instead  use EXPORT/environment variables from terminal. Refer to README file for the EXPORT variables you can use
   #access_key = <>
   #secret_key = <>
 }
